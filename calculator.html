@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #030609;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 488px;
+    padding: 28px 34px 27px;
+    background-color: #1c1c1c;
+    border-radius: 5px;
+}
+
+.display {
+    height: 143px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-size: 112px;
+    font-weight: 300;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px 22px;
+}
+
+button {
+    width: 87px;
+    height: 87px;
+    border: none;
+    border-radius: 50%;
+    background-color: #505050;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.function {
+    background-color: #a5a5a5;
+    color: #111;
+}
+
+.operator {
+    background-color: #ff9800;
+    color: white;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+@media (max-width: 520px) {
+    .calculator {
+        width: 95vw;
+        padding: 20px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    button {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        font-size: 22px;
+    }
+
+    .display {
+        height: 125px;
+        font-size: 75px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+
+        <div class="display">7744</div>
+
+        <div class="buttons">
+            <button class="function">C</button>
+            <button class="function">+/-</button>
+            <button class="function">%</button>
+            <button class="operator">÷</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">x</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+            <button class="zero">0</button>
+            <button>,</button>
+            <button class="operator">=</button>
+        </div>
+    </div>
+</body>
+</html>

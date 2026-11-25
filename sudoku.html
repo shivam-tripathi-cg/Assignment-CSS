@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    display: flex;
+    gap: 26px;
+    padding: 30px;
+}
+
+.section {
+    text-align: center;
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 26px);
+    grid-template-rows: repeat(9, 26px);
+    border: 2px solid #222;
+}
+
+.grid div {
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.green {
+    background: #a5d5b8;
+}
+
+@media (max-width: 580px) {
+    .container {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(9, 8vw);
+        grid-template-rows: repeat(9, 8vw);
+    }
+
+    .grid div {
+        font-size: 3vw;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>SUDOKU</h2>
+
+            <div class="grid">
+                <div>8</div><div></div><div>6</div><div class="green"></div><div class="green"></div><div class="green">3</div><div></div><div>9</div><div></div>
+                <div></div><div>4</div><div></div><div class="green"></div><div class="green">1</div><div class="green"></div><div></div><div>6</div><div>8</div>
+                <div>2</div><div></div><div></div><div class="green">8</div><div class="green">7</div><div class="green"></div><div></div><div></div><div>5</div>
+
+                <div class="green">1</div><div class="green"></div><div class="green">8</div><div></div><div></div><div>5</div><div class="green"></div><div class="green">2</div><div class="green"></div>
+                <div class="green"></div><div class="green">3</div><div class="green"></div><div>1</div><div></div><div></div><div class="green"></div><div class="green">5</div><div class="green"></div>
+                <div class="green">7</div><div class="green"></div><div class="green">5</div><div></div><div>3</div><div></div><div class="green">9</div><div class="green"></div><div class="green"></div>
+
+                <div></div><div>2</div><div>1</div><div class="green"></div><div class="green"></div><div class="green">7</div><div></div><div>4</div><div></div>
+                <div>6</div><div></div><div></div><div class="green"></div><div class="green">2</div><div class="green"></div><div></div><div>8</div><div></div>
+                <div></div><div>8</div><div>7</div><div class="green">6</div><div class="green"></div><div class="green">4</div><div></div><div></div><div>3</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ANSWER</h2>
+
+            <div class="grid">
+                <div>8</div><div>7</div><div>6</div><div class="green">5</div><div class="green">4</div><div class="green">3</div><div>1</div><div>9</div><div>2</div>
+                <div>5</div><div>4</div><div>3</div><div class="green">2</div><div class="green">1</div><div class="green">9</div><div>7</div><div>6</div><div>8</div>
+                <div>2</div><div>1</div><div>9</div><div class="green">8</div><div class="green">7</div><div class="green">6</div><div>4</div><div>3</div><div>5</div>
+
+                <div class="green">1</div><div class="green">9</div><div class="green">8</div><div>7</div><div>6</div><div>5</div><div class="green">3</div><div class="green">2</div><div class="green">4</div>
+                <div class="green">4</div><div class="green">3</div><div class="green">2</div><div>1</div><div>9</div><div>8</div><div class="green">6</div><div class="green">5</div><div class="green">7</div>
+                <div class="green">7</div><div class="green">6</div><div class="green">5</div><div>4</div><div>3</div><div>2</div><div class="green">9</div><div class="green">8</div><div class="green">1</div>
+
+                <div>3</div><div>2</div><div>1</div><div class="green">9</div><div class="green">8</div><div class="green">7</div><div>5</div><div>4</div><div>6</div>
+                <div>6</div><div>5</div><div>4</div><div class="green">3</div><div class="green">2</div><div class="green">1</div><div>8</div><div>7</div><div>9</div>
+                <div>9</div><div>8</div><div>7</div><div class="green">6</div><div class="green">5</div><div class="green">4</div><div>2</div><div>1</div><div>3</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

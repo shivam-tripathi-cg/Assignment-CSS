@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Over Scoreboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #0b0f19;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .game-screen {
+      position: relative;
+      width: 820px;
+      height: 520px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      background: radial-gradient(circle at 50% 30%, #1a2a44 0%, #0d1624 60%, #080d16 100%);
+    }
+
+    .game-screen::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 160px;
+      background: radial-gradient(ellipse at 50% 120%, #1e5a22 0%, #133816 50%, #0b1a10 80%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span:first-child {
+      font-size: 13px;
+    }
+
+    .logo-text span:last-child {
+      font-size: 18px;
+    }
+
+    .boards-container {
+      display: flex;
+      gap: 36px;
+      width: 100%;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .team-card {
+      width: 270px;
+      height: 250px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 16px 20px;
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .team-card.ind {
+      background: linear-gradient(180deg, #1b63bd 0%, #15509d 100%);
+    }
+
+    .team-card.pak {
+      background: linear-gradient(180deg, #449d44 0%, #367d36 100%);
+    }
+
+    .team-name {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .balls-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .ball {
+      width: 28px;
+      height: 28px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .score {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .controls-container {
+      display: flex;
+      gap: 24px;
+      z-index: 2;
+      margin-bottom: 8px;
+    }
+
+    .action-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      transition: transform 0.1s ease, filter 0.15s ease;
+    }
+
+    .action-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    .action-btn:active {
+      transform: scale(0.95);
+    }
+
+    .bat-btn {
+      background: linear-gradient(180deg, #f5a623 0%, #e08b15 100%);
+    }
+
+    .restart-btn {
+      background: linear-gradient(180deg, #e02f2f 0%, #bf1d1d 100%);
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      fill: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-screen">
+    <div class="logo-container">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="18" r="3.5" fill="#ffffff" />
+        <path d="M5.5 3L8.5 6L6.5 8L3.5 5L5.5 3Z" fill="#ffffff" />
+        <path d="M8 5.5L16 13.5L14 15.5L6 7.5L8 5.5Z" fill="#ffffff" />
+      </svg>
+      <div class="logo-text">
+        <span>SUPER</span>
+        <span>OVER</span>
+      </div>
+    </div>
+
+    <div class="boards-container">
+      <div class="team-card ind">
+        <div class="team-name">IND</div>
+        <div class="balls-row">
+          <div class="ball">4</div>
+          <div class="ball">3</div>
+          <div class="ball">2</div>
+          <div class="ball">6</div>
+          <div class="ball">6</div>
+          <div class="ball">6</div>
+        </div>
+        <div class="score">27 / 0</div>
+      </div>
+
+      <div class="team-card pak">
+        <div class="team-name">PAK</div>
+        <div class="balls-row">
+          <div class="ball">2</div>
+          <div class="ball">4</div>
+          <div class="ball">0</div>
+          <div class="ball">3</div>
+          <div class="ball">1</div>
+          <div class="ball">4</div>
+        </div>
+        <div class="score">14 / 0</div>
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <button class="action-btn bat-btn" title="Bat">
+        <svg class="btn-icon" viewBox="0 0 24 24">
+          <path d="M19.07 4.93c-.39-.39-1.02-.39-1.41 0l-1.42 1.42 2.83 2.83 1.42-1.42c.39-.39.39-1.02 0-1.41l-1.42-1.42zM15.54 7.05L5.64 16.95c-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0L18.36 9.88l-2.82-2.83z" />
+        </svg>
+      </button>
+
+      <button class="action-btn restart-btn" title="Reset">
+        <svg class="btn-icon" viewBox="0 0 24 24">
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
