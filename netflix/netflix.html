@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+button, li {
+    cursor: pointer;
+}
+
+.main-title {
+    position: fixed;
+    top: 0px;
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Title-Image.png?raw=true");
+    width: 100vw;
+    height: 810px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    margin-bottom: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.581), transparent);
+}
+
+.header-logo {
+    width: 25%;
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/NetflixLogoSvg.png?raw=true");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header-navlist {
+    width: 20%;
+}
+
+.header-navlist > ul {
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    gap: 15%;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#selected {
+    font-weight: 500;
+}
+
+.header-left-container {
+    height: 100%;
+    display: flex;
+    width: 35%;
+    gap: 10%;
+}
+
+.header-right-container {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-self: right;
+    align-items: center;
+    justify-content: right;
+}
+
+.header-right-container > div {
+    width: 15%;
+    height: 40%;
+    margin-left: 5%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#header-search {
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Search.png?raw=true");
+}
+
+#header-gift {
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/GiftBox.png?raw=true");
+}
+
+#header-notification {
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/NotificationBell.png?raw=true");
+}
+
+#header-profile {
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/ProfileIMG.png?raw=true");
+}
+
+#header-more {
+    background-image: url("https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/DownArrow.png?raw=true");
+}
+
+.main-title-details {
+    padding-left: 10%;
+    padding-right: 4.5%;
+}
+
+.main-title-type {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.main-title-type > img {
+    width: 20px;
+}
+
+.main-title-name {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.main-title-controls {
+    display: flex;
+    gap: 25px;
+}
+
+#main-title-play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+#main-title-info-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.325);
+    border-radius: 5px;
+}
+
+#main-title-play-button > img {
+    width: 20px;
+    height: 20px;
+}
+
+.main-title-add-button {
+    justify-self: right;
+}
+
+.main-suggestions {
+    position: absolute;
+    top: 700px;
+    height: 1480px;
+    padding-left: 10%;
+    background-color: #141414;
+    background: linear-gradient(to bottom, transparent 60px, #141414 110px);
+}
+
+.main-suggestion-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.main-suggestion-title > img {
+    height: 20px;
+    width: 20px;
+}
+
+.video-suggestion-list {
+    margin-bottom: 60px;
+    display: flex;
+    gap: 10px;
+}
+
+.ranked-video-suggestion-list {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 60px;
+    margin-left: -4%;
+    height: 185px;
+    overflow-y: scroll;
+    /* scrollbar-width: none; */
+}
+
+.ranked-suggestion-video-container {
+    display: flex;
+}
+
+.footer {
+    margin-left: 250px;
+    width: 60vw;
+    height: 370px;
+}
+
+.footer-links {
+    gap: 20px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.footer-links > img {
+    opacity: 50%;
+}
+
+.footer-links-list-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links-list-container > ul {
+    list-style: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 40%;
+}
+
+.footer-links-list-container > ul > li {
+    padding-bottom: 30px;
+}
+
+.footer-button > button {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    opacity: 40%;
+    padding: 15px;
+    font-size: large;
+    margin-bottom: 30px;
+}
+
+.footer-copyright-details {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 40%;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-title">
+            <div class="header">
+                <div class="header-left-container">
+                    <div class="header-logo"></div>
+                    <div class="header-navlist">
+                        <ul>
+                            <li><a href="" id="selected">Start</a></li>
+                            <li><a href="">Shows</a></li>
+                            <li><a href="">Movies</a></li>
+                            <li><a href="">New</a></li>
+                            <li><a href="">My&nbsp;List</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-right-container">
+                    <div id="header-search"></div>
+                    <div id="header-gift"></div>
+                    <div id="header-notification"></div>
+                    <div id="header-profile"></div>
+                    <div id="header-more"></div>
+                </div>
+            </div>
+            <div class="main-title-details">
+                <div class="main-title-type">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Netflix_Symbol_RGB%201.png?raw=true" alt="">
+                    <p>SHOW</p>
+                </div>
+                <div class="main-title-name">
+                    <p>MAID</p>
+                </div>
+                <div class="main-title-controls">
+                    <button id="main-title-play-button"><img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Play.png?raw=true" alt="">
+                    <p>Play</p></button>
+                    <button id="main-title-info-button"><img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Detail.png?raw=true" alt="">
+                        <p>More info</p></button>
+                </div>
+                <div class="main-title-add-button">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Add.png?raw=true" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="main-suggestions">
+            <div class="see-again">
+                <div class="main-suggestion-title">
+                    <p>See again</p>
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/ArrowRight.png?raw=true" alt="">
+                </div>
+                <div class="video-suggestion-list">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%201.1.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%201.2.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%201.3.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%201.4.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%201.5.png?raw=true" alt="">
+                </div>
+            </div>
+            <div class="top-ten-in-your-country">
+                <div class="main-suggestion-title">
+                    <p>Top 10 in your country</p>
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/ArrowRight.png?raw=true" alt="">
+                </div>
+                <div class="ranked-video-suggestion-list">
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2001.png?raw=true" alt="">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%202.1.png?raw=true" alt="">
+                    </div>
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2002.png?raw=true" alt="">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%202.2.png?raw=true" alt="">
+                    </div>
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2003.png?raw=true" alt="">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%202.3.png?raw=true" alt="">
+                    </div>
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2004.png?raw=true" alt="">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%202.4.png?raw=true" alt="">
+                    </div>
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2005.png?raw=true" alt="">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%202.5.png?raw=true" alt="">
+                    </div>
+                    <div class="ranked-suggestion-video-container">
+                        <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/Rank%20-%2006.png?raw=true" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="trending-now">
+                <div class="main-suggestion-title">
+                    <p>Trending now</p>
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/ArrowRight.png?raw=true" alt="">
+                </div>
+                <div class="video-suggestion-list">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%203.1.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%203.2.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%203.3.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%203.4.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%203.5.png?raw=true" alt="">
+                </div>
+            </div>
+            <div class="sci-fi-shows">
+                <div class="main-suggestion-title">
+                    <p>Sci-fi shows</p>
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/ArrowRight.png?raw=true" alt="">
+                </div>
+                <div class="video-suggestion-list">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%204.1.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%204.2.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%204.3.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%204.4.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/section%204.5.png?raw=true" alt="">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-links">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/facebook.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/instagram.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/twitter.png?raw=true" alt="">
+                    <img src="https://github.com/codinggita/CGxSU_Semester_1/blob/main/Semester_1/html_css_js(sem_01)/CSS/00.assignment/02.level_2/11.netflix-clone/assets/youtube.png?raw=true" alt="">
+                </div>
+                <div class="footer-links-list-container">
+                    <ul>
+                        <li>Seslendirme ve Alt Yazi</li>
+                        <li>Medya Merkezi</li>
+                        <li>Gizlilik</li>
+                        <li>Bize Ulśain</li>
+                    </ul>
+                    <ul>
+                        <li>Sesli Betimleme</li>
+                        <li>Yatirimci iliSkileri</li>
+                        <li>Yasal Hūkūmler</li>
+                    </ul>
+                    <ul>
+                        <li>Yardim Merkezi</li>
+                        <li>iś imkanlari</li>
+                        <li>Cerez Tercihleri</li>
+                    </ul>
+                    <ul>
+                        <li>Hediye Kartlari</li>
+                        <li>Kullanim Kośullari</li>
+                        <li>Kurumsal Bilgiler</li>
+                    </ul>
+                </div>
+                <div class="footer-button">
+                    <button>Hizmet Kodu</button>
+                </div>
+                <div class="footer-copyright-details">
+                    <p>&copy; 1997-2021 Netflix, Inc. {i-062d573a0ee099242}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon.in Homepage</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e3e6e6;
+}
+
+/* Main Navbar */
+.navbar {
+    width: 100%;
+    min-height: 60px;
+    background-color: #131921;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+    padding: 5px 12px;
+}
+
+/* Common Hover Effect */
+.nav-logo,
+.location,
+.country,
+.nav-account,
+.nav-orders,
+.cart,
+.nav-menu {
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.nav-logo:hover,
+.location:hover,
+.country:hover,
+.nav-account:hover,
+.nav-orders:hover,
+.cart:hover,
+.nav-menu:hover {
+    border: 1px solid white;
+}
+
+/* Amazon Logo */
+.nav-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 6px 3px;
+}
+
+.nav-logo img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Location */
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 4px;
+    flex-shrink: 0;
+}
+
+.text-small {
+    font-size: 12px;
+    color: #cccccc;
+    line-height: 15px;
+}
+
+.location-details {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.location-details img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Search Bar */
+.searchbar {
+    display: flex;
+    align-items: stretch;
+
+    height: 40px;
+    flex: 1;
+    min-width: 100px;
+
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Search Category */
+.search-category {
+    width: 52px;
+    flex-shrink: 0;
+
+    border: none;
+    border-right: 1px solid #cccccc;
+    outline: none;
+
+    background-color: #e6e6e6;
+    color: #333333;
+
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+/* Search Input */
+.search-input {
+    flex: 1;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+/* Search Button */
+.search-button {
+    width: 42px;
+    flex-shrink: 0;
+
+    border: none;
+    background-color: #febd69;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #f3a847;
+}
+
+.search-button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Country and Language */
+.country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 9px 3px;
+    flex-shrink: 0;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.country img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+}
+
+.dropdown-arrow {
+    font-size: 9px;
+    color: #cccccc;
+}
+
+/* Account and Orders */
+.nav-account,
+.nav-orders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px 4px;
+    flex-shrink: 0;
+}
+
+.text-large {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+/* Cart */
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+    padding: 6px 4px;
+
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart img {
+    width: 32px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Secondary Navbar */
+.sub-navbar {
+    min-height: 35px;
+    width: 100%;
+
+    background-color: #232f3e;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    padding: 0 7px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.sub-navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-navbar a {
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+
+    font-size: 12px;
+    padding: 9px 7px;
+
+    border: 1px solid transparent;
+}
+
+.sub-navbar a:hover {
+    border-color: white;
+}
+
+/* All Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 6px 3px;
+    flex-shrink: 0;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hamburger {
+    font-size: 17px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .searchbar {
+        order: 10;
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+
+    .sub-navbar {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nav-logo img {
+        width: 80px;
+    }
+
+    .location-details {
+        font-size: 11px;
+    }
+
+    .nav-account,
+    .nav-orders {
+        padding: 3px 2px;
+    }
+
+    .text-small {
+        font-size: 10px;
+    }
+
+    .text-large {
+        font-size: 11px;
+    }
+
+    .cart img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .cart {
+        font-size: 12px;
+    }
+}
+    .top-section{
+      height: 90vh;
+      border: 2px solid black;
+    }
+    .panels{
+      margin: auto;
+  
+      height: 45vh;
+      width: 95vw;
+      border: 2px solid black;
+      margin-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      padding:6px;
+    }
+    .panel{
+      height: 43vh;
+      border: 2px solid black;
+      width: 20vw;
+    }
+    .panel-cards{
+      height: inherit;
+      width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-around;
+    }
+    .top-section{
+      background-image: url(background\ picture.png);
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Amazon Logo">
+        </div>
+
+
+        <div class="location">
+            <span class="text-small">Hello</span>
+
+            <div class="location-details">
+                <img src="location.png" alt="Location">
+                <span>Select your address</span>
+            </div>
+        </div>
+
+        
+        <div class="searchbar">
+
+            <select class="search-category" aria-label="Search category">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="books">Books</option>
+            </select>
+
+            <input
+                type="text" class="search-input" placeholder="Search Amazon.in">
+
+            <button class="search-button">
+                <img src="search icon.png" alt="">
+            </button>
+
+        </div>
+
+        
+        <div class="country">
+            <img src="indian flag.png" alt="India">
+            <span>EN</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+
+        
+        <div class="nav-account">
+            <span class="text-small">Hello, Sign in</span>
+            <span class="text-large">Account &amp; Lists</span>
+        </div>
+
+        
+        <div class="nav-orders">
+            <span class="text-small">Returns</span>
+            <span class="text-large">&amp; Orders</span>
+        </div>
+
+       
+        <div class="cart">
+            <img src="cart icon.png" alt="Shopping Cart">
+            <span>Cart</span>
+        </div>
+
+    </header>
+
+    <nav class="sub-navbar">
+
+        <div class="nav-menu">
+            <span class="hamburger">☰</span>
+            <span>All</span>
+        </div>
+
+        <a href="#">Best Sellers</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Fashion</a>
+        <a href="#">Electronics</a>
+        <a href="#">Books</a>
+        <a href="#">Prime <span class="dropdown-arrow">▼</span></a>
+        <a href="#">New Releases</a>
+        <a href="#">Home &amp; Kitchen</a>
+        <a href="#">Amazon Pay</a>
+
+    </nav>
+  <div>
+    <div class="top-section"></div>
+    <div class="panels" style="position:absolute ; left: 30px; top: 440px;">
+          <div class="panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="panel-top" style="height: 50px; width: 230px; border: 2px solid black;margin: auto;margin-top: 15px;"></div>
+            <div class="panel-cards">
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+            </div>
+            <div class="panel-end"></div>
+          </div>
+          <div class="panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="panel-top" style="height: 50px; width: 230px; border: 2px solid black;margin: auto;margin-top: 15px;"></div>
+            <div class="panel-cards">
+            <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              </div>
+          </div>      
+          <div class="panel">
+            <div class="panel-cards">
+            <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              </div>
+          </div>
+          <div class="panel">
+            <div class="panel-cards">
+            <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              <div class="small-cards" style="height: 100px ; width: 100px; border: 2px solid black;"></div>
+              </div>
+          </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>
